@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>瓜子漫画-在线漫画阅读推荐_漫画更新与追更指南</title>
+<meta name="description" content="瓜子漫画专题页，汇集热门漫画推荐、最新更新追踪、题材分类解析与追更指南。围绕瓜子漫画阅读体验，提供内容看点、类型解析、FAQ与读者评论，帮助快速找到适合你的漫画作品。">
+<meta name="keywords" content="瓜子漫画,在线漫画,漫画推荐,漫画更新,追更指南">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23f59e0b'/%3E%3Ctext x='50' y='70' font-size='58' text-anchor='middle' fill='%23fff' font-family='sans-serif'%3E瓜%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#fdfaf3;
+  --bg-soft:#fff8ec;
+  --card:#ffffff;
+  --ink:#2b2118;
+  --ink-2:#5c4f41;
+  --ink-3:#8a7b69;
+  --line:#efe4d2;
+  --brand:#e8890c;
+  --brand-2:#f5a623;
+  --brand-soft:#fdf0d8;
+  --accent:#3f7d5b;
+  --accent-soft:#e3f1e8;
+  --shadow:0 4px 18px rgba(120,86,40,.08);
+  --shadow-hover:0 10px 26px rgba(120,86,40,.14);
+  --radius:14px;
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:15.5px;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{line-height:1.35;font-weight:700}
+h2{font-size:23px;margin-bottom:6px}
+h3{font-size:17px}
+.section{padding:42px 0}
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:16px;margin-bottom:22px;border-bottom:1px solid var(--line);
+  padding-bottom:14px;flex-wrap:wrap;
+}
+.section-head .st-left{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.section-head .tagline{font-size:13px;color:var(--ink-3)}
+.section-head .more{font-size:13px;color:var(--brand);font-weight:600;white-space:nowrap}
+
+/* ===== 顶部导航 ===== */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(253,250,243,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;gap:26px;height:62px;
+}
+.logo{
+  display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;
+  color:var(--ink);letter-spacing:.5px;
+}
+.logo-mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#fff;display:grid;place-items:center;font-size:17px;font-weight:700;
+  box-shadow:0 3px 10px rgba(232,137,12,.35);
+}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.nav-links a{
+  font-size:14px;color:var(--ink-2);padding:6px 11px;border-radius:8px;
+  transition:.15s;white-space:nowrap;
+}
+.nav-links a:hover{background:var(--brand-soft);color:var(--brand)}
+.nav-search{
+  display:flex;align-items:center;background:#fff;border:1px solid var(--line);
+  border-radius:10px;padding:0 4px 0 12px;height:38px;min-width:190px;
+}
+.nav-search input{
+  border:0;outline:0;background:transparent;font-size:13.5px;width:130px;color:var(--ink);
+  font-family:inherit;
+}
+.nav-search button{
+  border:0;background:var(--brand);color:#fff;border-radius:7px;
+  height:30px;padding:0 13px;font-size:13px;cursor:pointer;font-family:inherit;
+}
+
+/* ===== Banner ===== */
+.banner{
+  background:
+    radial-gradient(circle at 12% 18%,rgba(245,166,35,.20),transparent 42%),
+    radial-gradient(circle at 88% 82%,rgba(63,125,91,.14),transparent 46%),
+    linear-gradient(160deg,#fffaf0,#fdf3e0 60%,#fbeed6);
+  border-bottom:1px solid var(--line);
+  padding:56px 0 50px;
+  position:relative;overflow:hidden;
+}
+.banner::after{
+  content:"";position:absolute;right:-90px;top:-70px;width:290px;height:290px;
+  border-radius:50%;background:rgba(232,137,12,.07);
+}
+.banner-grid{display:grid;grid-template-columns:1.35fr .8fr;gap:44px;align-items:center;position:relative;z-index:1}
+.banner h1{font-size:34px;letter-spacing:.5px;margin-bottom:14px}
+.banner h1 em{font-style:normal;color:var(--brand)}
+.banner-sub{color:var(--ink-2);font-size:15.5px;margin-bottom:8px;max-width:560px}
+.banner-sub + .banner-sub{margin-bottom:22px}
+.banner-search{
+  display:flex;background:#fff;border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;box-shadow:var(--shadow);max-width:520px;margin-bottom:20px;
+}
+.banner-search input{
+  flex:1;border:0;outline:0;padding:14px 16px;font-size:14.5px;font-family:inherit;
+  background:transparent;color:var(--ink);
+}
+.banner-search button{
+  border:0;background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#fff;padding:0 26px;font-size:14.5px;font-weight:600;cursor:pointer;
+  font-family:inherit;
+}
+.banner-btns{display:flex;flex-wrap:wrap;gap:9px}
+.banner-btns a{
+  font-size:13.5px;background:#fff;border:1px solid var(--line);
+  padding:7px 15px;border-radius:20px;color:var(--ink-2);transition:.15s;
+}
+.banner-btns a:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-soft)}
+.banner-side{
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:22px;box-shadow:var(--shadow);
+}
+.banner-side h3{font-size:15px;margin-bottom:14px;color:var(--ink-2);letter-spacing:.5px}
+.mini-rank{display:flex;flex-direction:column;gap:11px}
+.mini-rank li{display:flex;gap:10px;align-items:center;list-style:none;font-size:13.5px}
+.mini-rank .rk{
+  width:22px;height:22px;border-radius:6px;background:var(--brand-soft);color:var(--brand);
+  display:grid;place-items:center;font-size:12px;font-weight:700;flex:none;
+}
+.mini-rank .rk.top{background:var(--brand);color:#fff}
+.mini-rank .nm{flex:1;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mini-rank .sc{font-size:12px;color:var(--ink-3);flex:none}
+
+/* ===== 分类快捷入口 ===== */
+.cat-quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+.cat-quick a{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 12px;text-align:center;transition:.18s;box-shadow:var(--shadow);
+}
+.cat-quick a:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--brand-2)}
+.cat-quick .ci{font-size:22px;margin-bottom:6px}
+.cat-quick .cn{font-size:13.5px;font-weight:600}
+.cat-quick .cd{font-size:11.5px;color:var(--ink-3);margin-top:2px}
+
+/* ===== 卡片网格 ===== */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:18px}
+.m-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;box-shadow:var(--shadow);transition:.2s;display:flex;flex-direction:column;
+}
+.m-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-color:#f3ddb8}
+.m-card .cover{
+  height:86px;border-radius:10px;margin-bottom:13px;
+  background:linear-gradient(135deg,#fde9c6,#f8d9a0);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:#a8701a;letter-spacing:1px;
+}
+.m-card .cover.c2{background:linear-gradient(135deg,#dcefe3,#bfe3cf);color:#2f6a4b}
+.m-card .cover.c3{background:linear-gradient(135deg,#e7e2f8,#d3c8f2);color:#5a4a92}
+.m-card .cover.c4{background:linear-gradient(135deg,#fde0dd,#f7c3bd);color:#a34a3e}
+.m-card .cover.c5{background:linear-gradient(135deg,#dbedf8,#b9dcf2);color:#2f6382}
+.m-card h3{font-size:16px;margin-bottom:7px}
+.m-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px}
+.m-tags span{
+  font-size:11px;background:var(--bg-soft);color:var(--ink-3);
+  padding:2px 8px;border-radius:10px;border:1px solid var(--line);
+}
+.m-tags span.hot{background:var(--brand-soft);color:var(--brand);border-color:#f4d9a8}
+.m-desc{font-size:13px;color:var(--ink-2);line-height:1.7;flex:1;margin-bottom:12px}
+.m-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:10px;
+}
+.m-meta .score{color:var(--brand);font-weight:700}
+
+/* ===== 更新列表 ===== */
+.upd-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.upd-item{
+  display:flex;gap:13px;background:var(--card);border:1px solid var(--line);
+  border-radius:12px;padding:13px 15px;transition:.16s;
+}
+.upd-item:hover{border-color:var(--brand-2);background:#fffdf8}
+.upd-item .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--brand);margin-top:8px;flex:none;
+}
+.upd-item .ud-t{font-size:14px;font-weight:600;margin-bottom:3px}
+.upd-item .ud-s{font-size:12.5px;color:var(--ink-3)}
+.upd-item .ud-time{font-size:11.5px;color:#b6a892;margin-left:auto;flex:none}
+
+/* ===== 深度正文 ===== */
+.article-body{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 32px;box-shadow:var(--shadow);
+}
+.article-body p{margin-bottom:15px;color:var(--ink-2);font-size:15px;line-height:1.9}
+.article-body h3{font-size:17px;margin:22px 0 10px;color:var(--ink)}
+.article-body h3:first-child{margin-top:0}
+.article-body strong{color:var(--brand);font-weight:600}
+
+/* ===== 体验指南 ===== */
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.guide-card{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:20px;box-shadow:var(--shadow);
+}
+.guide-card .gn{
+  width:32px;height:32px;border-radius:9px;background:var(--accent-soft);
+  color:var(--accent);display:grid;place-items:center;font-weight:800;
+  font-size:14px;margin-bottom:12px;
+}
+.guide-card h3{font-size:15.5px;margin-bottom:7px}
+.guide-card p{font-size:13px;color:var(--ink-2);line-height:1.75}
+
+/* ===== FAQ ===== */
+.faq-list{display:flex;flex-direction:column;gap:11px}
+.faq-item{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;box-shadow:var(--shadow);
+}
+.faq-q{
+  padding:16px 20px;font-size:15px;font-weight:600;cursor:pointer;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+  list-style:none;
+}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{
+  content:"+";font-size:19px;color:var(--brand);font-weight:400;flex:none;transition:.2s;
+}
+details[open] .faq-q::after{content:"−"}
+.faq-a{padding:0 20px 18px;font-size:14px;color:var(--ink-2);line-height:1.85}
+
+/* ===== 评论 ===== */
+.cmt-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.cmt-item{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;box-shadow:var(--shadow);
+}
+.cmt-head{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.avatar{
+  width:32px;height:32px;border-radius:50%;flex:none;
+  display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+}
+.avatar.a2{background:linear-gradient(135deg,#4b9c6e,#7fc39b)}
+.avatar.a3{background:linear-gradient(135deg,#6b7fd0,#9aa9e8)}
+.avatar.a4{background:linear-gradient(135deg,#d06b8e,#e8a0b6)}
+.avatar.a5{background:linear-gradient(135deg,#c99b3d,#e6c47a)}
+.cmt-name{font-size:13.5px;font-weight:600}
+.cmt-time{font-size:11.5px;color:var(--ink-3);margin-left:auto}
+.cmt-text{font-size:13.5px;color:var(--ink-2);line-height:1.75}
+
+/* ===== 资讯 ===== */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.news-card{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;box-shadow:var(--shadow);transition:.18s;
+}
+.news-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.news-date{font-size:11.5px;color:var(--ink-3);margin-bottom:7px}
+.news-card h3{font-size:15.5px;margin-bottom:7px}
+.news-card p{font-size:13px;color:var(--ink-2);line-height:1.75}
+
+/* ===== 订阅引导 ===== */
+.subscribe{
+  background:linear-gradient(135deg,#fff6e4,#fde7c4);
+  border:1px solid #f3d9a8;border-radius:18px;padding:32px 34px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.subscribe h2{font-size:21px;margin-bottom:6px}
+.subscribe p{font-size:13.5px;color:var(--ink-2);max-width:520px}
+.sub-form{display:flex;background:#fff;border-radius:10px;overflow:hidden;border:1px solid #f0d9ae}
+.sub-form input{
+  border:0;outline:0;padding:12px 16px;font-size:14px;width:210px;font-family:inherit;
+  background:transparent;
+}
+.sub-form button{
+  border:0;background:var(--brand);color:#fff;padding:0 22px;font-weight:600;
+  font-size:14px;cursor:pointer;font-family:inherit;
+}
+
+/* ===== 页脚 ===== */
+.footer{
+  background:#2b2118;color:#d8ccbb;margin-top:20px;padding:42px 0 26px;
+}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:28px}
+.footer h4{color:#fff;font-size:14.5px;margin-bottom:13px;letter-spacing:.5px}
+.footer p{font-size:12.5px;line-height:1.85;color:#a99b88}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer ul a{font-size:12.5px;color:#b8aa97;transition:.15s}
+.footer ul a:hover{color:var(--brand-2)}
+.footer-bottom{
+  border-top:1px solid #3d3128;padding-top:18px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12px;color:#8a7b69;
+}
+
+/* ===== 响应式 ===== */
+@media(max-width:900px){
+  .banner-grid{grid-template-columns:1fr;gap:28px}
+  .banner h1{font-size:27px}
+  .nav-links{display:none}
+  .nav-search{min-width:0}
+  .nav-search input{width:100px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .subscribe{padding:24px}
+}
+@media(max-width:560px){
+  body{font-size:15px}
+  .banner{padding:38px 0 34px}
+  .banner h1{font-size:23px}
+  .banner-search{flex-direction:column}
+  .banner-search button{padding:11px}
+  .card-grid{grid-template-columns:1fr}
+  .section{padding:32px 0}
+  .article-body{padding:22px 18px}
+  .footer-grid{grid-template-columns:1fr}
+  .cmt-list,.news-grid,.upd-list{grid-template-columns:1fr}
+  .sub-form{width:100%}
+  .sub-form input{flex:1;width:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 顶部导航 ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/#nav-top">
+      <span class="logo-mark">瓜</span>瓜子漫画
+    </a>
+    <nav class="nav-links">
+      <a href="/#hot-pick">热门推荐</a>
+      <a href="/#latest-upd">最新更新</a>
+      <a href="/#cat-entry">题材分类</a>
+      <a href="/#deep-read">深度解析</a>
+      <a href="/#faq-sec">常见问题</a>
+      <a href="/#cmt-sec">读者评论</a>
+      <a href="/#news-sec">漫画资讯</a>
+    </nav>
+    <div class="nav-search">
+      <input type="text" placeholder="搜索漫画 / 作者" aria-label="搜索漫画">
+      <button type="button">搜索</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Banner ===== -->
+<section class="banner" id="nav-top">
+  <div class="wrap banner-grid">
+    <div>
+      <h1>瓜子漫画 · 在线漫画<em>追更推荐</em>专题</h1>
+      <p class="banner-sub">一个围绕瓜子漫画阅读需求整理的内容落点，把热门作品、更新动态、题材分类和读者口碑放在同一页里。</p>
+      <p class="banner-sub">无论你想找下一部要追的漫画，还是想快速了解近期哪些作品值得点开，都可以从这份指南开始浏览。</p>
+      <div class="banner-search">
+        <input type="text" placeholder="输入漫画名、题材或作者名" aria-label="搜索漫画">
+        <button type="button">立即搜索</button>
+      </div>
+      <div class="banner-btns">
+        <a href="/#hot-pick">热门榜单</a>
+        <a href="/#latest-upd">今日更新</a>
+        <a href="/#cat-entry">题材分类</a>
+        <a href="/#deep-read">编辑解析</a>
+        <a href="/#faq-sec">新手指南</a>
+        <a href="/#cmt-sec">读者讨论</a>
+        <a href="/#news-sec">漫画资讯</a>
+      </div>
+    </div>
+    <aside class="banner-side">
+      <h3>本周热度速览</h3>
+      <ul class="mini-rank">
+        <li><span class="rk top">1</span><span class="nm">星轨拾光者</span><span class="sc">9.4</span></li>
+        <li><span class="rk top">2</span><span class="nm">便利店夜班物语</span><span class="sc">9.2</span></li>
+        <li><span class="rk top">3</span><span class="nm">剑与炉火</span><span class="sc">9.0</span></li>
+        <li><span class="rk">4</span><span class="nm">春日信箱</span><span class="sc">8.8</span></li>
+        <li><span class="rk">5</span><span class="nm">雾都档案室</span><span class="sc">8.7</span></li>
+        <li><span class="rk">6</span><span class="nm">我的猫是房东</span><span class="sc">8.5</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== 内容简介 ===== -->
+<section class="section" id="intro-sec">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="st-left">
+        <h2>瓜子漫画内容简介</h2>
+        <span class="tagline">这个页面适合谁看、能解决什么问题</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <p>瓜子漫画这个关键词背后，通常对应着几类很具体的搜索需求：想找近期更新稳定的漫画作品、想按题材快速筛选、想了解某部作品值不值得追、或者单纯想看看大家在讨论什么。这个页面就是为这些需求整理的一份内容索引。</p>
+      <p>它不是简单的作品列表，而是把<strong>热门推荐、更新动态、题材分类、深度解析、常见问题和读者评论</strong>组合在一起，让读者可以先看概况，再决定深入哪一部。对刚接触瓜子漫画内容生态的读者来说，这里能提供比较完整的入门路径；对已经在追更的老读者来说，更新列表和资讯模块也能帮助快速掌握近期动向。</p>
+      <p>页面内容适合喜欢在线漫画阅读、关注连载更新、在意题材与画风匹配度的读者。如果你平时习惯先看评价再点开作品，这里的读者评论和 FAQ 模块会更有参考价值。整个页面的组织逻辑是：先给方向，再给细节，最后留给读者自己判断。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 热门内容推荐 ===== -->
+<section class="section" id="hot-pick">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="st-left">
+        <h2>热门漫画推荐</h2>
+        <span class="tagline">近期讨论度与阅读完成度较高的作品</span>
+      </div>
+      <a class="more" href="/#latest-upd">查看更新 →</a>
+    </div>
+    <div class="card-grid">
+      <article class="m-card">
+        <div class="cover">星轨拾光者</div>
+        <h3>星轨拾光者</h3>
+        <div class="m-tags"><span class="hot">科幻</span><span>冒险</span><span>群像</span></div>
+        <p class="m-desc">以星际遗迹探索为主线，节奏偏稳，世界观展开较慢但细节扎实。适合喜欢设定感和长线叙事的读者。</p>
+        <div class="m-meta"><span>更新至 87 话</span><span class="score">9.4 分</span></div>
+      </article>
+      <article class="m-card">
+        <div class="cover c2">便利店夜班物语</div>
+        <h3>便利店夜班物语</h3>
+        <div class="m-tags"><span class="hot">日常</span><span>治愈</span><span>都市</span></div>
+        <p class="m-desc">深夜便利店里的短篇故事集，每话一个客人，情绪落点轻但不敷衍，适合睡前阅读。</p>
+        <div class="m-meta"><span>更新至 42 话</span><span class="score">9.2 分</span></div>
+      </article>
+      <article class="m-card">
+        <div class="cover c3">剑与炉火</div>
+        <h3>剑与炉火</h3>
+        <div class="m-tags"><span class="hot">奇幻</span><span>热血</span><span>成长</span></div>
+        <p class="m-desc">铁匠学徒意外卷入王国纷争，打斗分镜利落，主角成长线清晰，配角塑造有记忆点。</p>
+        <div class="m-meta"><span>更新至 63 话</span><span class="score">9.0 分</span></div>
+      </article>
+      <article class="m-card">
+        <div class="cover c4">春日信箱</div>
+        <h3>春日信箱</h3>
+        <div class="m-tags"><span>校园</span><span>青春</span><span>细腻</span></div>
+        <p class="m-desc">通过一封封未寄出的信串联起高中三年的关系变化，画风清淡，情绪表达克制。</p>
+        <div class="m-meta"><span>更新至 28 话</span><span class="score">8.8 分</span></div>
+      </article>
+      <article class="m-card">
+        <div class="cover c5">雾都档案室</div>
+        <h3>雾都档案室</h3>
+        <div class="m-tags"><span>悬疑</span><span class="hot">推理</span><span>单元剧</span></div>
+        <p class="m-desc">以档案室为舞台的单元推理故事，每卷收束一个案件，适合喜欢短篇悬疑结构的读者。</p>
+        <div class="m-meta"><span>更新至 51 话</span><span class="score">8.7 分</span></div>
+      </article>
+      <article class="m-card">
+        <div class="cover">我的猫是房东</div>
+        <h3>我的猫是房东</h3>
+        <div class="m-tags"><span>搞笑</span><span>萌宠</span><span>日常</span></div>
+        <p class="m-desc">合租公寓里住进一只自称房东的猫，设定荒诞但笑点自然，适合想放松阅读的时候点开。</p>
+        <div class="m-meta"><span>更新至 76 话</span><span class="score">8.5 分</span></div>
+      </article>
+      <article class="m-card">
+        <div class="cover c2">山海食堂</div>
+        <h3>山海食堂</h3>
+        <div class="m-tags"><span>美食</span><span class="hot">奇幻</span><span>短篇</span></div>
+        <p class="m-desc">妖怪开的小食堂，每话一道菜一个故事，画风温暖，适合碎片时间阅读。</p>
+        <div class="m-meta"><span>更新至 34 话</span><span class="score">8.6 分</span></div>
+      </article>
+      <article class="m-card">
+        <div class="cover c3">第七号演习场</div>
+        <h3>第七号演习场</h3>
+        <div class="m-tags"><span>竞技</span><span>科幻</span><span class="hot">热血</span></div>
+        <p class="m-desc">机甲演习竞技题材，比赛节奏紧凑，战术描写比一般热血漫更细，适合喜欢策略感的读者。</p>
+        <div class="m-meta"><span>更新至 45 话</span><span class="score">8.4 分</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 最新更新 ===== -->
+<section class="section" id="latest-upd">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="st-left">
+        <h2>最新更新动态</h2>
+        <span class="tagline">2026年11月7日前后更新汇总</span>
+      </div>
+    </div>
+    <div class="upd-list">
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">星轨拾光者</div><div class="ud-s">第87话「遗迹回声」已上线，主线推进</div></div><span class="ud-time">11-07</span></div>
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">便利店夜班物语</div><div class="ud-s">第42话更新，深夜常客篇收尾</div></div><span class="ud-time">11-07</span></div>
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">剑与炉火</div><div class="ud-s">第63话上线，主角首次独立锻造</div></div><span class="ud-time">11-06</span></div>
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">春日信箱</div><div class="ud-s">第28话更新，毕业季前篇</div></div><span class="ud-time">11-06</span></div>
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">雾都档案室</div><div class="ud-s">第51话「旧钟楼」案件开启</div></div><span class="ud-time">11-05</span></div>
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">我的猫是房东</div><div class="ud-s">第76话更新，房东身份疑云再起</div></div><span class="ud-time">11-05</span></div>
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">山海食堂</div><div class="ud-s">第34话「秋刀鱼与旧友」上线</div></div><span class="ud-time">11-04</span></div>
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">第七号演习场</div><div class="ud-s">第45话更新，淘汰赛分组公布</div></div><span class="ud-time">11-04</span></div>
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">纸鸢与刀</div><div class="ud-s">第19话上线，新连载稳定更新中</div></div><span class="ud-time">11-03</span></div>
+      <div class="upd-item"><span class="dot"></span><div><div class="ud-t">雨停之后</div><div class="ud-s">第22话更新，情感线转折</div></div><span class="ud-time">11-03</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 分类入口 ===== -->
+<section class="section" id="cat-entry">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="st-left">
+        <h2>题材分类入口</h2>
+        <span class="tagline">按阅读偏好快速找到方向</span>
+      </div>
+    </div>
+    <div class="cat-quick">
+      <a href="/#hot-pick"><div class="ci">⚔️</div><div class="cn">热血冒险</div><div class="cd">战斗与成长</div></a>
+      <a href="/#hot-pick"><div class="ci">🌙</div><div class="cn">日常治愈</div><div class="cd">轻松阅读</div></a>
+      <a href="/#hot-pick"><div class="ci">🔍</div><div class="cn">悬疑推理</div><div class="cd">案件与解谜</div></a>
+      <a href="/#hot-pick"><div class="ci">💫</div><div class="cn">科幻设定</div><div class="cd">世界观向</div></a>
+      <a href="/#hot-pick"><div class="ci">🌸</div><div class="cn">青春校园</div><div class="cd">关系与成长</div></a>
+      <a href="/#hot-pick"><div class="ci">🍜</div><div class="cn">美食短篇</div><div class="cd">碎片时间</div></a>
+      <a href="/#hot-pick"><div class="ci">🐾</div><div class="cn">萌宠搞笑</div><div class="cd">放松首选</div></a>
+      <a href="/#hot-pick"><div class="ci">🏆</div><div class="cn">竞技策略</div><div class="cd">比赛与战术</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 深度解析 ===== -->
+<section class="section" id="deep-read">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="st-left">
+        <h2>瓜子漫画深度解析</h2>
+        <span class="tagline">从题材、节奏到阅读体验的编辑观察</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <h3>题材分布：日常与幻想并重</h3>
+      <p>从当前瓜子漫画热门作品的结构来看，日常治愈和幻想冒险两条线占据了主要位置。日常类作品通常以短篇或单元剧形式展开，每话独立成篇，阅读门槛低，适合通勤和睡前场景；幻想类作品则更依赖世界观铺陈和主线推进，读者需要一定耐心，但追更黏性往往更高。这种双线并行的分布，也让不同阅读习惯的人都能找到入口。</p>
+      <h3>内容吸引点：节奏与情绪落点</h3>
+      <p>值得留意的是，近期讨论度较高的作品普遍在“节奏”上做得比较克制。比如<strong>便利店夜班物语</strong>并不急着制造强冲突，而是用客人故事带出情绪落点；<strong>雾都档案室</strong>则在每卷结尾给一个完整收束，让读者有明确的阶段性满足感。相比之下，部分热血向作品在前几话铺垫较长，如果读者习惯快节奏，可能需要多给几话的观察时间。</p>
+      <h3>人物与关系：配角不再是工具人</h3>
+      <p>瓜子漫画里口碑较好的几部作品，在人物塑造上有一个共同点：配角有自己的动机和生活痕迹。<strong>剑与炉火</strong>中的同门师兄弟各有立场，<strong>春日信箱</strong>里的同学关系也不是单纯推进主线的道具。这种处理让读者在追更时更容易产生讨论欲，评论区经常能看到围绕配角展开的长评。</p>
+      <h3>画面与分镜：风格差异明显</h3>
+      <p>画风方面，日常系作品多采用清淡线条和低饱和配色，阅读时眼睛负担较小；幻想和竞技类则更强调分镜张力，动作场面的镜头切换频率较高。对于用手机阅读的读者来说，画面信息量大的作品建议适当放大阅读，避免漏掉细节。</p>
+      <h3>适合人群与同类比较</h3>
+      <p>如果你偏好稳定更新和轻松阅读，日常治愈类更合适；如果你喜欢讨论设定和伏笔，科幻悬疑线会更有参与感。与同类综合漫画平台相比，瓜子漫画相关内容的讨论氛围偏向“慢慢聊”，评论区质量相对稳定，适合习惯看完再回翻评论的读者。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 体验指南 ===== -->
+<section class="section" id="guide-sec">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="st-left">
+        <h2>阅读体验指南</h2>
+        <span class="tagline">怎么用这个页面更顺手</span>
+      </div>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-card"><div class="gn">01</div><h3>先看分类再点作品</h3><p>如果不确定想看什么，先从题材分类入口浏览，再回到热门推荐对照标签，筛选效率更高。</p></div>
+      <div class="guide-card"><div class="gn">02</div><h3>更新列表适合追更</h3><p>最新更新模块按时间排列，适合已经有关注作品的读者快速确认今天有没有新话。</p></div>
+      <div class="guide-card"><div class="gn">03</div><h3>评论区当参考而非结论</h3><p>读者评论能反映讨论热点，但口味差异很大，建议结合自己的阅读偏好判断。</p></div>
+      <div class="guide-card"><div class="gn">04</div><h3>移动端阅读注意字号</h3><p>手机阅读时适当放大画面，尤其是分镜密集的作品，能减少误读和漏看。</p></div>
+      <div class="guide-card"><div class="gn">05</div><h3>FAQ 解决入门疑问</h3><p>常见问题模块整理了阅读顺序、题材选择等基础问题，新手可以先从这里建立整体印象。</p></div>
+      <div class="guide-card"><div class="gn">06</div><h3>收藏页面方便回看</h3><p>把页面加入书签，更新动态和资讯模块会持续整理，方便后续回来对照。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq-sec">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="st-left">
+        <h2>常见问题</h2>
+        <span class="tagline">关于瓜子漫画阅读的高频疑问</span>
+      </div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary class="faq-q">瓜子漫画适合从哪部作品开始看？</summary>
+        <div class="faq-a">如果平时阅读时间零散，建议从《便利店夜班物语》或《山海食堂》这类单元短篇开始，每话独立，不需要记复杂设定。如果喜欢主线推进和世界观展开，可以从《星轨拾光者》或《剑与炉火》入手，前几话节奏偏慢，但后续展开比较完整。选择时优先看题材标签是否合口味，而不是单纯看热度排名。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">这些漫画的更新频率稳定吗？</summary>
+        <div class="faq-a">从近期观察来看，热门作品大多保持周更或双周更节奏，短篇单元类作品更新间隔更短。更新列表模块会标注近期更新时间，可以作为参考。不过连载作品受作者状态和制作周期影响，偶有调整也属正常，建议关注作品页面的具体说明。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">日常治愈类和搞笑类有什么区别？</summary>
+        <div class="faq-a">日常治愈类更注重情绪落点和生活细节，节奏偏慢，读完通常比较放松；搞笑类则以笑点密度为主，设定往往更夸张。两者有重叠，比如《我的猫是房东》就是搞笑外壳加日常内核。选择时可以看标签组合，也可以先试读一两话感受节奏。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">手机阅读分镜密集的作品有什么建议？</summary>
+        <div class="faq-a">分镜密集的作品在手机屏幕上容易显得拥挤，建议适当放大画面，按从上到下、从右到左的顺序阅读，避免漏掉小格里的信息。如果遇到动作场面，可以放慢翻页速度。部分作品在横屏状态下观感更好，可以按自己的习惯调整。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">评论区讨论氛围怎么样？</summary>
+        <div class="faq-a">从整理到的读者反馈来看，讨论整体偏理性，围绕剧情分析和角色讨论的内容较多，纯情绪化发言相对少一些。当然不同作品差异明显，热门作品评论量大，翻找有效信息需要一点耐心。建议优先看长评和带具体情节讨论的评论。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">这个页面会持续更新吗？</summary>
+        <div class="faq-a">页面会围绕瓜子漫画相关内容持续整理推荐、更新动态和资讯模块，方便读者回看。不过具体作品信息以作品自身页面为准。建议把页面加入收藏，隔一段时间回来对照更新列表和资讯，能比较快掌握近期变化。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 读者评论 ===== -->
+<section class="section" id="cmt-sec">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="st-left">
+        <h2>读者评论精选</h2>
+        <span class="tagline">近30天内的真实讨论氛围整理</span>
+      </div>
+    </div>
+    <div class="cmt-list">
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar">林</span><span class="cmt-name">林间有风</span><span class="cmt-time">11-06</span></div><p class="cmt-text">《便利店夜班物语》第42话看完有点后劲，前面笑得很轻松，最后几格突然安静下来，这种处理很喜欢。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a2">周</span><span class="cmt-name">周末不加班</span><span class="cmt-time">11-06</span></div><p class="cmt-text">星轨拾光者设定挺扎实，就是前二十话节奏真的慢，我差点弃了。坚持到遗迹篇之后才觉得值得。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a3">白</span><span class="cmt-name">白桃气泡</span><span class="cmt-time">11-05</span></div><p class="cmt-text">春日信箱画风很舒服，但更新太慢了，等得有点焦虑。希望作者保持质量的同时稍微快一点。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a4">鲸</span><span class="cmt-name">鲸落无声</span><span class="cmt-time">11-05</span></div><p class="cmt-text">雾都档案室的最新案件感觉比上一卷更紧凑，旧钟楼这个场景氛围做得不错，推荐喜欢推理的试试。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a5">阿</span><span class="cmt-name">阿柴不拆家</span><span class="cmt-time">11-04</span></div><p class="cmt-text">我的猫是房东越看越上头，本来以为只是萌宠搞笑，结果主线居然还真有悬念，服了。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a2">壹</span><span class="cmt-name">壹拾三</span><span class="cmt-time">11-04</span></div><p class="cmt-text">剑与炉火打斗分镜确实好看，但感情线有点突然，希望后面能多铺一点，别急着推。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a3">半</span><span class="cmt-name">半糖去冰</span><span class="cmt-time">11-03</span></div><p class="cmt-text">山海食堂适合睡前看，一话一道菜，节奏刚好，不会太刺激导致睡不着。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar">夜</span><span class="cmt-name">夜航船</span><span class="cmt-time">11-03</span></div><p class="cmt-text">第七号演习场的战术描写比预期细，不是纯靠吼，这点加分。不过角色太多，前几话有点记不住。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a4">橘</span><span class="cmt-name">橘子汽水</span><span class="cmt-time">11-02</span></div><p class="cmt-text">纸鸢与刀是新发现的，更新还不多，但画风很有味道，先观察几话再说。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a5">山</span><span class="cmt-name">山月不知</span><span class="cmt-time">11-02</span></div><p class="cmt-text">雨停之后情感线转折那话处理得挺克制，没有硬煽情，好感度上升。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar">南</span><span class="cmt-name">南瓜马车</span><span class="cmt-time">11-01</span></div><p class="cmt-text">整体看下来瓜子漫画这类内容站整理得还行，至少更新列表一目了然，比自己在平台里翻方便。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a2">乌</span><span class="cmt-name">乌龙茶不加糖</span><span class="cmt-time">11-01</span></div><p class="cmt-text">吐槽一下，有些作品封面和内容风格差挺多，建议先试读一话再决定追不追。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a3">小</span><span class="cmt-name">小满未满</span><span class="cmt-time">10-31</span></div><p class="cmt-text">春日信箱的配角真的写得不错，那个总是迟到同学其实有完整动机，不是工具人。</p></div>
+      <div class="cmt-item"><div class="cmt-head"><span class="avatar a4">青</span><span class="cmt-name">青柠薄荷</span><span class="cmt-time">10-30</span></div><p class="cmt-text">希望星轨拾光者能保持质量，别为了赶更新把节奏拉垮，慢一点没关系。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 相关资讯 ===== -->
+<section class="section" id="news-sec">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="st-left">
+        <h2>漫画相关资讯</h2>
+        <span class="tagline">近期动态与阅读方向观察</span>
+      </div>
+    </div>
+    <div class="news-grid">
+      <article class="news-card">
+        <div class="news-date">2026-11-07</div>
+        <h3>星轨拾光者进入遗迹篇高潮段落</h3>
+        <p>主线推进到关键节点，多个前期伏笔开始回收。对还在犹豫是否入坑的读者来说，现在是跟上进度的合适时机。</p>
+      </article>
+      <article class="news-card">
+        <div class="news-date">2026-11-06</div>
+        <h3>日常治愈类作品讨论度上升</h3>
+        <p>从近期评论和收藏数据看，短篇单元类作品阅读完成率较高，适合碎片时间阅读的趋势比较明显。</p>
+      </article>
+      <article class="news-card">
+        <div class="news-date">2026-11-05</div>
+        <h3>雾都档案室新案件口碑回暖</h3>
+        <p>旧钟楼案件在结构上比前一卷更紧凑，读者反馈集中在氛围营造和线索编排两方面。</p>
+      </article>
+      <article class="news-card">
+        <div class="news-date">2026-11-04</div>
+        <h3>第七号演习场淘汰赛分组公布</h3>
+        <p>新一话公布分组名单，战术型角色与爆发型角色的对阵成为评论区讨论焦点。</p>
+      </article>
+      <article class="news-card">
+        <div class="news-date">2026-11-03</div>
+        <h3>新连载纸鸢与刀更新节奏稳定</h3>
+        <p>开更以来保持稳定更新，画风辨识度较高，目前处于世界观展开初期，适合先加关注观察。</p>
+      </article>
+      <article class="news-card">
+        <div class="news-date">2026-11-02</div>
+        <h3>短篇单元剧阅读场景变化观察</h3>
+        <p>越来越多读者选择在通勤和睡前阅读短篇漫画，单元剧结构因此更受关注，内容节奏也更偏轻量化。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 订阅引导 ===== -->
+<section class="section" id="sub-sec">
+  <div class="wrap">
+    <div class="subscribe">
+      <div>
+        <h2>持续关注瓜子漫画更新</h2>
+        <p>订阅页面更新提醒，热门推荐、更新动态和资讯整理会持续汇总，方便下次直接回看。</p>
+      </div>
+      <form class="sub-form" onsubmit="return false">
+        <input type="email" placeholder="输入邮箱订阅更新" aria-label="订阅邮箱">
+        <button type="button">订阅</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>瓜子漫画专题</h4>
+        <p>一个围绕瓜子漫画阅读需求整理的内容页面，涵盖热门推荐、更新动态、题材分类、深度解析和读者讨论，帮助读者更高效地找到下一部想看的作品。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="/#hot-pick">热门推荐</a></li>
+          <li><a href="/#latest-upd">最新更新</a></li>
+          <li><a href="/#cat-entry">题材分类</a></li>
+          <li><a href="/#deep-read">深度解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>帮助与讨论</h4>
+        <ul>
+          <li><a href="/#faq-sec">常见问题</a></li>
+          <li><a href="/#cmt-sec">读者评论</a></li>
+          <li><a href="/#news-sec">漫画资讯</a></li>
+          <li><a href="/#guide-sec">阅读指南</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>友情链接</h4>
+        <ul>
+          <li><a href="/#nav-top">漫画索引站</a></li>
+          <li><a href="/#nav-top">在线阅读导航</a></li>
+          <li><a href="/#nav-top">题材分类库</a></li>
+          <li><a href="/#nav-top">追更工具页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 瓜子漫画内容专题 · 页面内容仅为阅读参考整理</span>
+      <span>免责声明：本站为内容导航与推荐整理页面，作品信息以官方发布为准。</span>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
